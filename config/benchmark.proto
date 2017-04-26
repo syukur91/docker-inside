@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package benchmark;
+
+service Benchmark {
+  rpc SimpleCall (SimpleRequest) returns (SimpleResponse) {}
+  rpc RestGetJsonCall (RestGetJsonRequest) returns (RestGetJsonResponse) {}
+}
+
+message SimpleRequest {
+}
+
+message SimpleResponse {
+}
+
+message RestGetJsonRequest {
+  string argString = 1;
+  int32 argInt32 = 2;
+  float argFloat = 3;
+}
+
+message RestGetJsonResponse {
+  string argString = 1;
+  int32 argInt32 = 2;
+  float argFloat = 3;
+}
+
